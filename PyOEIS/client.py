@@ -1,8 +1,8 @@
 import requests
-from sequence import Sequence
-import regex
-from errors import NoResultsError, InvalidQueryError, TooManyResultsError
-from partialmethod import partialmethod
+from .sequence import Sequence
+from . import regex
+from .errors import NoResultsError, InvalidQueryError, TooManyResultsError
+from .partialmethod import partialmethod
 
 
 class OEISClient(object):
@@ -67,7 +67,7 @@ class OEISClient(object):
             self._check_response(response.text, search_string)
             seqs = self._parse_response(response.text)
             num_seqs = regex.showing_line.search(response.text).groups()[0]
-            for i in xrange(10, (int(num_seqs) - (int(num_seqs) % 10)) + 1):
+            for i in range(10, (int(num_seqs) - (int(num_seqs) % 10)) + 1):
                 if len(seqs) < max_seqs:
                     response = self.session.get(self.SEARCH_URL,
                                                 params={'q': search_string,

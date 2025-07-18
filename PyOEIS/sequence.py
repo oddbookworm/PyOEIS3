@@ -1,6 +1,6 @@
-import regex
-from helpers import parse_comma_separated_findall
-from errors import MalformedSequenceError, NoFunctionError
+from . import regex
+from .helpers import parse_comma_separated_findall
+from .errors import MalformedSequenceError, NoFunctionError
 from math import factorial as fac  # NOQA
 
 

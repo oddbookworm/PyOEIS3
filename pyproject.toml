@@ -1,0 +1,33 @@
+[project]
+name = "pyoeis3"
+version = "1.1.5"
+description = "Python3 interface to the OEIS"
+readme = "README.md"
+requires-python = ">=3.0"
+license = "MIT AND (Apache-2.0)"
+authors = [{name  = "oddbookworm"}]
+classifiers=[
+    'Development Status :: 3 - Alpha',
+    'Natural Language :: English',
+    'Intended Audience :: Developers',
+    'Topic :: Scientific/Engineering :: Mathematics',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python'
+]
+
+[project.urls]
+"Bug Reports" = "https://github.com/oddbookworm/PyOEIS3/issues"
+"Documentation" = "http://pyoeis.readthedocs.org"
+"Python Hosted" = "https://pythonhosted.org/pyoeis"
+
+[build-system]
+requires = [
+    "meson-python",
+    "meson",
+    "ninja",
+    "requests"
+]
+build-backend = 'mesonpy'
+
+[tool.meson-python.args]
+install = ['--tags=runtime,python-runtime']

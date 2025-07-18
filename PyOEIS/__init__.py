@@ -1,1 +1,1 @@
-from client import OEISClient
+from .client import OEISClient

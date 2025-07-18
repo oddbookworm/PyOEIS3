@@ -5,3 +5,6 @@
 upload
 
 docs/docs.zip
+
+*.egg*
+build
